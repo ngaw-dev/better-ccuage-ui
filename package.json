@@ -1,0 +1,48 @@
+{
+  "name": "better-ccusage-ui",
+  "version": "1.0.0",
+  "description": "API Usage Dashboard - Interactive visualizations and analytics for better-ccusage data",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd frontend && yarn dev\" \"cd backend && yarn dev\"",
+    "build": "cd shared && yarn build && cd ../frontend && yarn build && cd ../backend && yarn build",
+    "test": "yarn workspaces run test",
+    "test:watch": "yarn workspaces run test:watch",
+    "lint": "yarn workspaces run lint",
+    "format": "prettier --write .",
+    "clean": "yarn workspaces run clean && rm -rf node_modules",
+    "type-check": "yarn workspaces run type-check"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "concurrently": "^9.1.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "packageManager": "yarn@1.22.22"
+}
