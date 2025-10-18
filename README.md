@@ -147,6 +147,13 @@ cd backend && yarn build
 
 The frontend build output will be in `frontend/dist/` and backend in `backend/dist/`.
 
+## Screenshots
+
+Below is a screenshot of the frontend application:
+
+![App Screenshot](frontend/src/assets/screenshot.png)
+
+
 ## Testing
 
 ```bash
